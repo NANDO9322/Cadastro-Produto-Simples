@@ -9,20 +9,17 @@ const Product = () => {
   const [available, setAvailable] = useState(false);
 
   const addProduct = () => {
-    // Verifica se os campos obrigatórios estão preenchidos
     if (!name || !description || !price.toString().trim() || available === "") {
       alert("Por favor, preencha todos os campos obrigatórios.");
       return;
     }
 
-    // Verifica se o preço é um número válido
     const priceAsNumber = parseFloat(price);
     if (isNaN(priceAsNumber) || priceAsNumber <= 0) {
       alert("Por favor, insira um preço válido.");
       return;
     }
 
-    // Adiciona um novo produto
     const newProduct = {
       name,
       description,
